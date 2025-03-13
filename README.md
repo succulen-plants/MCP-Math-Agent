@@ -136,6 +136,40 @@ async def run_agent():
 - 工具调用和结果
 - 最终响应
 
+## 运行输出
+Processing request of type ListToolsRequest
+可用工具:
+- add: Execute arithmetic addition operation
+- multiply: Execute arithmetic multiplication operation
+
+开始执行代理调用...
+
+INFO:httpx:HTTP Request: POST https://** "HTTP/1.1 200 OK"
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+INFO:httpx:HTTP Request: POST https://** "HTTP/1.1 200 OK"
+
+===== ReAct 执行跟踪 =====
+
+步骤 1: 思考
+模型思考并决定:
+
+步骤 2: 工具调用
+调用工具: multiply
+输入: {'a': 8, 'b': 12}
+输出: content='96' name='multiply' id='44f7af32-dbd5-4ab4-ad37-b45f9da0cac9' tool_call_id='call_ncJW4OzrgGBEPya0gHhRJ6cg'
+
+步骤 3: 工具调用
+调用工具: multiply
+输入: {'a': 8, 'b': 12}
+输出: content='96' name='multiply' id='44f7af32-dbd5-4ab4-ad37-b45f9da0cac9' tool_call_id='call_ncJW4OzrgGBEPya0gHhRJ6cg'
+
+步骤 4: 思考
+模型思考并决定: The result of \((3 + 5) \times 12\) is 96.
+
+最终响应:
+The result of \((3 + 5) \times 12\) is 96.
+
 ## 技术栈
 
 - **MCP**: 工具注册、发现和调用协议
