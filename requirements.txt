@@ -1,0 +1,10 @@
+langchain
+langgraph
+tavily-python
+BeautifulSoup4
+openai
+flask
+json5
+Flask-CORS
+langchain_openai
+python-dotenv
